@@ -6,6 +6,7 @@ import { ProductComponent } from './modules/product/product.component';
 import { FullpageComponent } from './layouts/fullpage/fullpage.component';
 import { FullpageadminComponent } from './layouts/fullpageadmin/fullpageadmin.component';
 import { AdminComponent } from './modules/admin/admin.component';
+import { LoginComponent } from './modules/login/login.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path:'', component: FullpageComponent, children: [
-      {path:'login', component: ProductComponent},
+      {path:'login', component: LoginComponent},
     ]
   },
   {
