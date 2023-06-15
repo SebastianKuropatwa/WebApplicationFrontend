@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from './product.service';
 import { Product } from './model/product';
+import { Page } from 'src/app/shared/model/page';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
 
-  products: Product[] = [];
+  page!: Page<Product>;
 
   constructor(private productService: ProductService) {}
 
@@ -19,7 +20,7 @@ export class ProductComponent {
 
   getProducts() {
     this.productService.getProducts()
-    .subscribe(products => this.products = products);
+    .subscribe(page => this.page = this.page);
   }
 
 }
